@@ -1,0 +1,56 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Subir imagenes</title> 
+</head> 
+  
+<body> 
+    <h1>Subir Publicacion</h1> 
+    <hr> 
+    <div> 
+        <form action="/" method="POST" enctype="multipart/form-data"> 
+            <div> 
+                <label for="title">Titulo de la Publicacion</label> 
+                <input type="text" id="title" placeholder="Titulo" 
+                       value="" name="titulo" required> 
+            </div> 
+            <div> 
+                <label for="desc">Descripcion de la Imagen</label> 
+                <textarea id="desc" name="pesc" value="" rows="2" 
+                          placeholder="Descripcion" required> 
+                </textarea> 
+            </div> 
+            <div> 
+                <label for="image">Subir imagen</label> 
+                <input type="file" id="image" 
+                       name="image" value="" required> 
+            </div> 
+            <div> 
+                <button type="submit">Submit</button> 
+            </div> 
+        </form> 
+    </div> 
+  
+    <hr> 
+  
+    <h1>Imagenes Subidas</h1> 
+    <div> 
+        <% items.forEach(function(publicacion) { %> 
+        <div> 
+            <div> 
+                <img src="data:image/<%=publicacion.img.contentType%>;base64, 
+                     <%=publicacion.img.data.toString('base64')%>"> 
+                <div> 
+                    <h5><%= publicacion.titulo %></h5> 
+                    <p><%= publicacion.desc %></p> 
+                </div> 
+            </div> 
+        </div> 
+        <% }) %> 
+    </div> 
+</body> 
+  
+</html> 

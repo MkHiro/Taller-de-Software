@@ -1,0 +1,55 @@
+<h1>Subir Publicacion</h1> 
+    <hr> 
+    <div> 
+        <form action="/publicaciones/publicar" method="POST" enctype="multipart/form-data"> 
+            <div> 
+                <label for="title">Titulo de la Publicacion</label> 
+                <input type="text" id="title" placeholder="Titulo" 
+                       value="" name="titulo" required> 
+            </div> 
+            <div> 
+                <label for="desc">Descripcion de la Imagen</label> 
+                <textarea id="desc" name="pesc" value="" rows="2" 
+                          placeholder="Descripcion" required> 
+                </textarea> 
+            </div> 
+            <div> 
+                <label for="image">Subir imagen</label> 
+                <input type="file" id="image" 
+                       name="image" value="" required> 
+            </div> 
+            <div> 
+                <button type="submit">Submit</button> 
+            </div> 
+        </form> 
+    </div> 
+
+
+{{#each errors}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{text}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/each}}
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3>New Post</h3>
+        </div>
+        <div class="card-body">
+            <form action="/publicaciones/publicar" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input type="text" name="title" class="form-control" placeholder="Title" autofocus>
+                </div>
+                <div class="form-group">
+                    <textarea name="description" class="form-control" placeholder="Description"></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit">Publicaloo!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
