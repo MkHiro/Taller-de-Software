@@ -7,3 +7,6 @@ helpers.isAuthenticated=(req,res,next)=>{
     res.redirect('/user/signin');
 };
 module.exports = helpers;
+
+
+console.log("hola");
