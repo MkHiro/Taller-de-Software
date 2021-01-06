@@ -8,5 +8,3 @@ helpers.isAuthenticated=(req,res,next)=>{
 };
 module.exports = helpers;
 
-
-console.log("hola");
